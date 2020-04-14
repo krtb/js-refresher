@@ -17,8 +17,9 @@ function handleClick(event) {
     const name = card.querySelector('h2').textContent;
     
     // use replace(); to replace string txt in src attribute
+    // provide img with height and width so that it doesn't take a second to fill in
     modalInner.innerHTML = `
-        <img src=${imgSrc.replace('200', '600')} alt=${name}/>
+        <img width="600" height="600" src=${imgSrc.replace('200', '600')} alt=${name}/>
         <p>${description}</p>
     `;
 
