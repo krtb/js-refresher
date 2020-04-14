@@ -23,7 +23,7 @@ function handleClick(event) {
     `;
 
     modalOuter.classList.add('open');
-}
+};
 
 
 // loop over buttons, listen for a click on each of them
@@ -34,7 +34,7 @@ cardButtons.forEach((button)=> {
 // function to close modal, by removing open class
 function closeModal() {
     modalOuter.classList.remove('open');
-}
+};
 
 modalOuter.addEventListener('click', function(event) {
     // place bang next to statement to convert to BOOLEAN data-type
@@ -42,7 +42,12 @@ modalOuter.addEventListener('click', function(event) {
     const isOutside = !event.target.closest('.modal-inner'); 
     // if clicking outside of modal, close modal by removing 'open' CSS class
     if (isOutside) {
-        modalOuter.classList.remove('open');
-    }
-    
-}) 
+        closeModal();
+    };
+});
+
+window.addEventListener('keydown', (event)=> {
+    if (event.key === 'Escape') {
+        closeModal();
+    };
+});
