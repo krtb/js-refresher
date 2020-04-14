@@ -3,11 +3,13 @@ const tabButtons = document.querySelectorAll('[role="tab"]');
 const tabPanels = tabs.querySelectorAll('[role="tabpanel"]');
 
 function handleTabClick(event) {
-    console.log(event.currentTarget);
+
+    tabPanels.forEach((panel)=> {
+       panel.hidden = true;
+    })
+
 }
 
 tabButtons.forEach(button => {
-    button.addEventListener('click', ()=> {
-        console.log(`clicked the ${button.innerText} button!`)
-    })
+    button.addEventListener('click', handleTabClick);
 });
