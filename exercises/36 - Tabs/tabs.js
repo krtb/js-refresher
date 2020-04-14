@@ -8,6 +8,10 @@ function handleTabClick(event) {
        panel.hidden = true;
     })
 
+    tabButtons.forEach((button) => {
+        button.setAttribute('aria-selected', false);
+    })
+
 }
 
 tabButtons.forEach(button => {
