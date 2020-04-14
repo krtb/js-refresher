@@ -13,7 +13,13 @@ function handleTabClick(event) {
     })
 
     // mark the current tab as selected
+    // Method 1
     event.currentTarget.setAttribute('aria-selected', true);
+    const { id } = event.currentTarget
+    const tabPanel = document.querySelector(`[aria-labelledby=${id}]`);
+    tabPanel.hidden = false;
+
+    // Method 2
 
 }
 
